@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import svelte from "@astrojs/svelte";
 import catppuccin from "@catppuccin/starlight";
+import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
   integrations: [
@@ -101,4 +102,17 @@ export default defineConfig({
       ],
     }),
   ],
+
+  adapter: cloudflare({
+    imageService: "compile",
+    prerenderEnvironment: "workerd",
+  }),
+  vite: {
+    optimizeDeps: {
+      exclude: ["astro/compiler-runtime", "astro/zod"],
+    },
+    ssr: {
+      external: ["astro/compiler-runtime", "astro/zod"],
+    },
+  },
 });
