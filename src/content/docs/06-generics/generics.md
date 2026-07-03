@@ -1,0 +1,5 @@
+---
+title: Generics
+---
+
+⏳ **Belum dipelajari**
