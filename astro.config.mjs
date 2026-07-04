@@ -11,7 +11,13 @@ export default defineConfig({
     starlight({
       title: "Belajar Rust",
       sidebar: [
-        { label: "0. Hello Rust", items: [{ slug: "00-hello-rust" }] },
+        {
+          label: "0. Hello Rust",
+          items: [
+            { slug: "00-hello-rust/sekilas-rust" },
+            { slug: "00-hello-rust/hello-rust" },
+          ],
+        },
         {
           label: "1. Fondasi",
           items: [
