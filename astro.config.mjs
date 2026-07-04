@@ -95,6 +95,9 @@ export default defineConfig({
         },
       ],
       customCss: ["/src/styles/fonts.css"],
+      components: {
+        Hero: "./src/components/Hero.astro",
+      },
       plugins: [
         catppuccin({
           dark: { flavor: "mocha", accent: "sky" },
