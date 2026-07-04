@@ -3,6 +3,7 @@ import starlight from "@astrojs/starlight";
 import svelte from "@astrojs/svelte";
 import catppuccin from "@catppuccin/starlight";
 import cloudflare from "@astrojs/cloudflare";
+import { sessionDrivers } from "astro/config";
 
 export default defineConfig({
   integrations: [
@@ -10,7 +11,7 @@ export default defineConfig({
     starlight({
       title: "Belajar Rust",
       sidebar: [
-        { label: "0. Setup & Workflow", items: [{ slug: "00-setup" }] },
+        { label: "0. Hello Rust", items: [{ slug: "00-hello-rust" }] },
         {
           label: "1. Fondasi",
           items: [
@@ -107,12 +108,23 @@ export default defineConfig({
     imageService: "compile",
     prerenderEnvironment: "workerd",
   }),
+  session: {
+    driver: sessionDrivers.memory(),
+  },
   vite: {
     optimizeDeps: {
-      exclude: ["astro/compiler-runtime", "astro/zod"],
+      exclude: [
+        "astro/app/entrypoint/dev",
+        "astro/compiler-runtime",
+        "astro/zod",
+      ],
     },
     ssr: {
-      external: ["astro/compiler-runtime", "astro/zod"],
+      external: [
+        "astro/app/entrypoint/dev",
+        "astro/compiler-runtime",
+        "astro/zod",
+      ],
     },
   },
 });

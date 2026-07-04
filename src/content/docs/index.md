@@ -6,7 +6,7 @@ hero:
   tagline: 🦀 Belajar Rust dari Nol
   actions:
     - text: Mulai Belajar
-      link: /01-fondasi/variable-mutability
+      link: /00-hello-rust
       icon: right-arrow
       variant: primary
 ---

@@ -4,6 +4,9 @@
 
 ## Aturan Wajib
 
+## Update Rule
+- Never Commit untill I confirm the changes are ready
+
 ### Slug Convention
 
 - `01-fondasi/tipe-data.md` → slug `01-fondasi/tipe-data`
