@@ -62,14 +62,17 @@ Hello, world!
 
 ## Struktur Project Cargo
 
-Buka project yang baru dibuat dan perhatikan file-file ini:
+Buka project yang baru dibuat dan perhatikan file dan folder ini:
 
-| File / Folder | Fungsi |
-|---------------|--------|
-| `Cargo.toml` | Metadata project dan daftar dependencies |
-| `src/main.rs` | Entry point untuk binary (`cargo run`) |
-| `target/` | Hasil build; bisa diabaikan, biasanya masuk `.gitignore` |
-| `Cargo.lock` | Snapshot dependency yang dipakai; muncul setelah build pertama |
+```text
+hello-rust/
+├── Cargo.toml          # Metadata project dan daftar dependencies
+├── Cargo.lock          # Snapshot dependency yang dipakai; muncul setelah build pertama
+├── .gitignore          # Daftar file/folder yang diabaikan Git
+├── src/
+│   └── main.rs         # Entry point untuk binary (cargo run)
+└── target/             # Hasil build; bisa diabaikan, biasanya masuk .gitignore
+```
 
 Contoh `Cargo.toml` minimal:
 
@@ -106,26 +109,27 @@ Ada juga perintah bantu yang sering dipakai:
 
 ## Setup Editor
 
-Rust paling nyaman ditulis dengan `rust-analyzer`.
+Rust paling nyaman ditulis dengan `rust-analyzer`. Komponen ini tidak diinstall otomatis saat menjalankan `rustup` dari command curl, jadi perlu disiapkan sesuai editor.
 
-### VS Code / Cursor
+`rust-analyzer` akan memberikan autocomplete, error inline, goto definition, serta refactoring.
 
-Install extension **rust-analyzer** (bukan yang bernama "Rust"). Setelah itu VS Code akan memberikan:
+### [Zed](https://zed.dev)
 
-- Autocomplete
-- Error inline
-- Goto definition
-- Refactoring rename
+Zed punya dukungan Rust bawaan. Cukup buka project Rust, editor akan otomatis mengaktifkan `rust-analyzer`.
+
+### [VS Code](https://code.visualstudio.com)/[Cursor](https://cursor.sh)
+
+Install extension [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer). Extension ini akan otomatis mengunduh binary `rust-analyzer` yang sesuai.
 
 ### Lainnya
 
-`rust-analyzer` juga tersedia untuk Helix, Neovim, Zed, Emacs, dan Sublime Text. Intinya: install LSP server lewat `rustup`:
+Untuk Helix, Neovim, Emacs, dan Sublime Text, install LSP server secara manual:
 
 ```bash
 rustup component add rust-analyzer
 ```
 
-Kemudian konfigurasikan editor untuk menjalankan binary tersebut.
+Kemudian konfigurasikan editor untuk menjalankan binary `rust-analyzer` tersebut.
 
 ## Membaca Error Compiler
 
@@ -146,6 +150,8 @@ cargo check
 ```
 
 Rust akan memberitahu bahwa `x` tidak bisa diassign ulang karena tidak mutable. Biasanya compiler langsung menyarankan menambahkan `mut`.
+
+> **Catatan:** `println!` diakhiri tanda seru `!` karena ia adalah *macro*, bukan fungsi biasa. Macro melakukan transformasi kode saat compile time, salah satunya adalah agar fungsi `println!` dapat digunakan dengan argumen yang berbeda-beda. Detailnya akan dipelajari di topik [Macros](/08-macros).
 
 ## Tips Workflow
 
