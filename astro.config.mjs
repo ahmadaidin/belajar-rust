@@ -10,6 +10,7 @@ export default defineConfig({
     svelte(),
     starlight({
       title: "Belajar Rust",
+      favicon: "/favicon.ico",
       sidebar: [
         {
           label: "0. Hello Rust",
