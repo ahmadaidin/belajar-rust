@@ -43,10 +43,9 @@ Extension editor untuk autocomplete, error inline, goto-definition:
 rustup component add rust-analyzer
 ```
 
-## Latihan yang sudah dilakukan
+## Checklist
 
-1. ✅ Install Rust toolchain
-2. ✅ `cargo new` + `cargo run` project pertama
-3. ✅ Baca pesan error compiler
-4. ✅ Coba `let mut` vs shadowing
-
+1. [ ] Install Rust toolchain
+2. [ ] `cargo new` + `cargo run` project pertama
+3. [ ] Baca pesan error compiler
+4. [ ] Coba `let mut` vs shadowing

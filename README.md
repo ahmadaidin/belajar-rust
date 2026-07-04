@@ -2,6 +2,8 @@
 
 A learning site for studying Rust, built with [Astro](https://astro.build/) + [Starlight](https://starlight.astro.build/) and styled with the [Catppuccin](https://github.com/catppuccin/starlight) theme.
 
+Project ini saya buat saat saya belajar bahasa Rust sehingga saya akan mengupdate topic pada project ini sesuai kecepatan saya dalam belajar.
+
 > 🦀 Roadmap belajar Rust dari nol — dari fondasi bahasa sampai concurrency, async, dan smart pointers.
 
 ## Tech Stack
