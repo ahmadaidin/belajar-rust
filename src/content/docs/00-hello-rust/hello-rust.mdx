@@ -74,18 +74,26 @@ hello-rust/
 └── target/             # Hasil build; bisa diabaikan, biasanya masuk .gitignore
 ```
 
+> **Catatan tentang `Cargo.lock`:** File ini dibuat secara otomatis oleh `cargo` berdasarkan `[dependencies]` di `Cargo.toml`. Jangan diedit manual — biarkan `cargo` yang mengelolanya. Lebih detailnya akan dipelajari di bagian
+
 Contoh `Cargo.toml` minimal:
 
 ```toml
 [package]
 name = "hello-rust"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
 ```
 
-Field `edition` menentukan versi aturan bahasa Rust. Saat ini umumnya dipakai `2021`.
+Penjelasan tiap bagian:
+
+- `[package]` — Section yang berisi metadata project.
+- `name` — Nama package (di Rust dinamakan crate). Nama ini yang muncul di `Cargo.lock` dan digunakan saat publish ke [crates.io](https://crates.io).
+- `version` — Versi package mengikuti [Semantic Versioning](https://semver.org), format `MAJOR.MINOR.PATCH`.
+- `edition` — Versi aturan bahasa Rust yang dipakai.
+- `[dependencies]` — Section untuk daftar library eksternal yang dibutuhkan project.
 
 ## 4 Perintah Utama
 
@@ -117,7 +125,7 @@ Rust paling nyaman ditulis dengan `rust-analyzer`. Komponen ini tidak diinstall 
 
 Zed punya dukungan Rust bawaan. Cukup buka project Rust, editor akan otomatis mengaktifkan `rust-analyzer`.
 
-### [VS Code](https://code.visualstudio.com)/[Cursor](https://cursor.sh)
+### [VS Code](https://code.visualstudio.com)
 
 Install extension [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer). Extension ini akan otomatis mengunduh binary `rust-analyzer` yang sesuai.
 
@@ -151,12 +159,13 @@ cargo check
 
 Rust akan memberitahu bahwa `x` tidak bisa diassign ulang karena tidak mutable. Biasanya compiler langsung menyarankan menambahkan `mut`.
 
-> **Catatan:** `println!` diakhiri tanda seru `!` karena ia adalah *macro*, bukan fungsi biasa. Macro melakukan transformasi kode saat compile time, salah satunya adalah agar fungsi `println!` dapat digunakan dengan argumen yang berbeda-beda. Detailnya akan dipelajari di topik [Macros](/08-macros).
+> **Catatan:** Sebenarnya jika menggunakan editor seperti Zed, atau VSCode, pesan error akan ditampilkan langsung di editor. Tetapi anda perlu mengetahui command `cargo check`, agar tidak bergantung kepada editor tersebut jika editor tersebut bermasalah.
+
 
 ## Tips Workflow
 
 1. **Mulai dari `cargo check`, bukan `cargo build`.** Jauh lebih cepat karena tidak memproduksi binary.
-2. **Jalankan `cargo fmt` dan `cargo clippy` sebelum commit.** Ini membuat kode konsisten dan mengurangi bug sederhana.
+2. **Jalankan `cargo fmt` dan `cargo clippy` sebelum commit.** Ini membuat kode konsisten.
 3. **Baca error dari atas ke bawah.** Pesan pertama biasanya sudah cukup untuk memperbaiki masalah.
 4. **Gunakan Rustlings untuk latihan.** Kumpulan latihan kecil yang langsung dikoreksi.
 
@@ -165,7 +174,6 @@ Rust akan memberitahu bahwa `x` tidak bisa diassign ulang karena tidak mutable. 
 - [Rust Book: Installation](https://doc.rust-lang.org/book/ch01-01-installation.html)
 - [Rustlings](https://github.com/rust-lang/rustlings) — latihan interaktif
 - [Cargo guide](https://doc.rust-lang.org/cargo/)
-- Lanjut ke [Variable & Mutability](/01-fondasi/variable-mutability)
 
 ## Checklist
 
