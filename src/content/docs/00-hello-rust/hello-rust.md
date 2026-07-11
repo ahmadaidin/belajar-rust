@@ -1,5 +1,6 @@
 ---
 title: Hello Rust
+description: "Halaman ini membahas pembuatan project Rust pertama dan memahami struktur project Cargo. Jika Rust belum terpasang, mulai dari Setup Rust."
 ---
 
 Halaman ini membahas pembuatan project Rust pertama dan memahami struktur project Cargo. Jika Rust belum terpasang, mulai dari [Setup Rust](/00-hello-rust/setup-rust).

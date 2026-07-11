@@ -1,5 +1,6 @@
 ---
 title: Tipe Data
+description: "Rust punya dua kelompok tipe data:"
 ---
 
 Rust punya dua kelompok tipe data:

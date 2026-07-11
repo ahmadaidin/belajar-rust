@@ -6,11 +6,18 @@ import cloudflare from "@astrojs/cloudflare";
 import { sessionDrivers } from "astro/config";
 
 export default defineConfig({
+  site: "https://belajarrust.aidin.my.id",
   integrations: [
     svelte(),
     starlight({
       title: "Belajar Rust",
       favicon: "/favicon.ico",
+      locales: {
+        root: {
+          label: "Indonesia",
+          lang: "id",
+        },
+      },
       sidebar: [
         {
           label: "0. Hello Rust",
@@ -104,6 +111,7 @@ export default defineConfig({
       ],
       customCss: ["/src/styles/fonts.css"],
       components: {
+        Head: "./src/components/Head.astro",
         Hero: "./src/components/Hero.astro",
       },
       plugins: [

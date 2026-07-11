@@ -1,6 +1,6 @@
 ---
 title: Rust Learning Roadmap
-description: Checklist progress belajar Rust dari nol sampai advanced
+description: "Checklist progress belajar Rust dari nol sampai advanced"
 ---
 
 # 🦀 Rust Learning Roadmap

@@ -1,5 +1,6 @@
 ---
 title: Sekilas Rust
+description: "Rust adalah bahasa pemrograman sistem yang dirancang untuk menulis perangkat lunak cepat, andal, dan aman. Bahasa ini pertama kali dibuat oleh Graydon…"
 ---
 
 Rust adalah bahasa pemrograman sistem yang dirancang untuk menulis perangkat lunak cepat, andal, dan aman. Bahasa ini pertama kali dibuat oleh Graydon Hoare di Mozilla Research sekitar tahun 2006, lalu rilis versi stabil 1.0 pada tahun 2015.

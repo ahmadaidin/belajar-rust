@@ -1,5 +1,6 @@
 ---
 title: Setup Rust
+description: "Halaman ini menjelaskan cara memasang toolchain Rust dan mengenalkan workflow cargo sebelum masuk ke topik bahasa."
 ---
 
 Halaman ini menjelaskan cara memasang toolchain Rust dan mengenalkan workflow `cargo` sebelum masuk ke topik bahasa.

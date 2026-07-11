@@ -1,5 +1,6 @@
 ---
 title: Variable & Mutability
+description: "Di Rust, setiap variabel secara default immutable — nilainya tidak bisa diubah setelah di-set."
 ---
 
 Di Rust, setiap variabel secara default **immutable** — nilainya tidak bisa diubah setelah di-set.

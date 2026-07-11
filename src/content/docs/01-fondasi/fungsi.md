@@ -1,5 +1,6 @@
 ---
 title: Fungsi
+description: "fn nama_fungsi(param1: Tipe1, param2: Tipe2) -> ReturnType {"
 ---
 
 ```rust

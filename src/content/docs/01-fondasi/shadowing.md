@@ -1,5 +1,6 @@
 ---
 title: Shadowing
+description: "Shadowing = mendeklarasikan ulang variabel dengan nama sama. Variabel baru dibuat, yang lama \"tertutupi\"."
 ---
 
 Shadowing = mendeklarasikan ulang variabel dengan nama sama. Variabel baru dibuat, yang lama "tertutupi".

@@ -1,5 +1,6 @@
 ---
 title: Tips Belajar
+description: "1. Jangan skip Ownership. Ini konsep paling penting dan paling bikin frustrasi di awal. Luangkan waktu di sini."
 ---
 
 1. **Jangan skip Ownership.** Ini konsep paling penting dan paling bikin frustrasi di awal. Luangkan waktu di sini.

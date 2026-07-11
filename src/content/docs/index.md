@@ -1,6 +1,6 @@
 ---
 title: Belajar Rust
-description: Roadmap belajar Rust dari nol
+description: "Roadmap belajar Rust dari nol"
 template: splash
 hero:
   tagline: 🦀 Belajar Rust dari Nol
