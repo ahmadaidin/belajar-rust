@@ -16,6 +16,7 @@ export default defineConfig({
           label: "0. Hello Rust",
           items: [
             { slug: "00-hello-rust/sekilas-rust" },
+            { slug: "00-hello-rust/setup-rust" },
             { slug: "00-hello-rust/hello-rust" },
           ],
         },

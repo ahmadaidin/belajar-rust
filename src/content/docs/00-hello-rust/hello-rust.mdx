@@ -2,48 +2,11 @@
 title: Hello Rust
 ---
 
-import Checklist from "@components/Checklist.svelte";
-
-Halaman ini menjelaskan cara memasang toolchain Rust dan membiasakan diri dengan workflow `cargo` sebelum masuk ke topik bahasa.
-
-## Prasyarat
-
-- Shell atau terminal (PowerShell, Bash, Zsh, Fish)
-- Koneksi internet untuk mengunduh `rustup`
-
-## Install Rust
-
-Rust biasanya diinstall lewat `rustup` — installer dan version manager sekaligus:
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-Ikuti instruksi di terminal, lalu muat ulang environment:
-
-```bash
-source $HOME/.cargo/env
-```
-
-Cek versi yang terpasang:
-
-```bash
-rustc --version
-cargo --version
-rustup --version
-```
-
-Output yang wajar terlihat seperti:
-
-```text
-rustc 1.96.1
-cargo 1.96.1
-rustup 1.27.1
-```
+Halaman ini membahas pembuatan project Rust pertama dan memahami struktur project Cargo. Jika Rust belum terpasang, mulai dari [Setup Rust](/00-hello-rust/setup-rust).
 
 ## Membuat Project Baru
 
-`cargo` memudahkan pembuatan project. Perintah di bawah ini membuat folder `hello-rust` dengan struktur standar:
+`cargo` menyediakan cara cepat untuk membuat project. Perintah di bawah ini membuat folder `hello-rust` dengan struktur standar:
 
 ```bash
 cargo new hello-rust
@@ -74,7 +37,7 @@ hello-rust/
 └── target/             # Hasil build; bisa diabaikan, biasanya masuk .gitignore
 ```
 
-> **Catatan tentang `Cargo.lock`:** File ini dibuat secara otomatis oleh `cargo` berdasarkan `[dependencies]` di `Cargo.toml`. Jangan diedit manual — biarkan `cargo` yang mengelolanya. Lebih detailnya akan dipelajari di bagian
+> **Catatan tentang `Cargo.lock`:** File ini dibuat secara otomatis oleh `cargo` berdasarkan `[dependencies]` di `Cargo.toml`. Jangan diedit manual — biarkan `cargo` yang mengelolanya. Lebih detailnya akan dipelajari di bagian [Cargo & Tooling](/15-cargo).
 
 Contoh `Cargo.toml` minimal:
 
@@ -95,49 +58,15 @@ Penjelasan tiap bagian:
 - `edition` — Versi aturan bahasa Rust yang dipakai.
 - `[dependencies]` — Section untuk daftar library eksternal yang dibutuhkan project.
 
-## 4 Perintah Utama
+## Perintah Cargo Dasar
 
-Biasakan menggunakan perintah-perintah ini dalam siklus development:
+Beberapa perintah yang langsung dipakai di halaman ini:
 
-| Perintah | Fungsi |
-|----------|--------|
-| `cargo check` | Cek kode tanpa build (paling cepat) |
-| `cargo build` | Compile project |
-| `cargo run` | Compile + jalankan |
-| `cargo test` | Jalankan test |
+- `cargo new <nama>` — Membuat project baru.
+- `cargo run` — Compile dan jalankan project.
+- `cargo check` — Cek kode tanpa menghasilkan binary (paling cepat).
 
-Ada juga perintah bantu yang sering dipakai:
-
-| Perintah | Fungsi |
-|----------|--------|
-| `cargo fmt` | Format kode secara otomatis |
-| `cargo clippy` | Linter bawaan Rust; memberi saran idiomatic |
-| `cargo doc --open` | Bangkitkan dan buka dokumentasi lokal |
-| `cargo clean` | Hapus folder `target/` untuk memulai build dari awal |
-
-## Setup Editor
-
-Rust paling nyaman ditulis dengan `rust-analyzer`. Komponen ini tidak diinstall otomatis saat menjalankan `rustup` dari command curl, jadi perlu disiapkan sesuai editor.
-
-`rust-analyzer` akan memberikan autocomplete, error inline, goto definition, serta refactoring.
-
-### [Zed](https://zed.dev)
-
-Zed punya dukungan Rust bawaan. Cukup buka project Rust, editor akan otomatis mengaktifkan `rust-analyzer`.
-
-### [VS Code](https://code.visualstudio.com)
-
-Install extension [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer). Extension ini akan otomatis mengunduh binary `rust-analyzer` yang sesuai.
-
-### Lainnya
-
-Untuk Helix, Neovim, Emacs, dan Sublime Text, install LSP server secara manual:
-
-```bash
-rustup component add rust-analyzer
-```
-
-Kemudian konfigurasikan editor untuk menjalankan binary `rust-analyzer` tersebut.
+Perintah lengkap dan pengaturan editor dibahas di [Setup Rust](/00-hello-rust/setup-rust).
 
 ## Membaca Error Compiler
 
@@ -159,32 +88,8 @@ cargo check
 
 Rust akan memberitahu bahwa `x` tidak bisa diassign ulang karena tidak mutable. Biasanya compiler langsung menyarankan menambahkan `mut`.
 
-> **Catatan:** Sebenarnya jika menggunakan editor seperti Zed, atau VSCode, pesan error akan ditampilkan langsung di editor. Tetapi anda perlu mengetahui command `cargo check`, agar tidak bergantung kepada editor tersebut jika editor tersebut bermasalah.
+> **Catatan:** Jika menggunakan editor seperti Zed atau VS Code, pesan error biasanya muncul langsung di editor karena `rust-analyzer` menjalankan `cargo check` di latar belakang. Meski begitu, tetap penting untuk memahami cara menjalankannya dari terminal.
 
+## Next Steps
 
-## Tips Workflow
-
-1. **Mulai dari `cargo check`, bukan `cargo build`.** Jauh lebih cepat karena tidak memproduksi binary.
-2. **Jalankan `cargo fmt` dan `cargo clippy` sebelum commit.** Ini membuat kode konsisten.
-3. **Baca error dari atas ke bawah.** Pesan pertama biasanya sudah cukup untuk memperbaiki masalah.
-4. **Gunakan Rustlings untuk latihan.** Kumpulan latihan kecil yang langsung dikoreksi.
-
-## Resource & Next Steps
-
-- [Rust Book: Installation](https://doc.rust-lang.org/book/ch01-01-installation.html)
-- [Rustlings](https://github.com/rust-lang/rustlings) — latihan interaktif
-- [Cargo guide](https://doc.rust-lang.org/cargo/)
-
-## Checklist
-
-<Checklist
-  id="00-setup"
-  client:load
-  items={[
-    "Install Rust toolchain via rustup",
-    "`cargo new` + `cargo run` project pertama",
-    "Setup editor dengan rust-analyzer",
-    "Pahami struktur project Cargo",
-    "Jalankan `cargo check`, `cargo test`, `cargo fmt`, `cargo clippy`",
-  ]}
-/>
+Setelah project pertama berjalan, lanjutkan ke topik [Variable & Mutability](/01-fondasi/variable-mutability) untuk memahami sistem ownership Rust.
