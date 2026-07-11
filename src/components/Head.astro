@@ -8,6 +8,8 @@ const canonical = Astro.site
   : Astro.url.href;
 const isNoindex = (data as { noindex?: boolean }).noindex === true;
 
+const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -23,6 +25,10 @@ const jsonLd = JSON.stringify({
     <Tag {...attrs} set:html={content} />
   ))
 }
+
+{googleSiteVerification && (
+  <meta name="google-site-verification" content={googleSiteVerification} />
+)}
 
 {isNoindex && <meta name="robots" content="noindex, nofollow" />}
 
