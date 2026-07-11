@@ -3,9 +3,9 @@
   "compilerOptions": {
     "paths": {
       "@components/*": ["./src/components/*"],
-      "~/*": ["./src/*"]
-    }
+      "~/*": ["./src/*"],
+    },
   },
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": ["dist"],
 }

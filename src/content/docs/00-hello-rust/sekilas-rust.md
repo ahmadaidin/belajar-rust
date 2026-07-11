@@ -6,20 +6,20 @@ Rust adalah bahasa pemrograman sistem yang dirancang untuk menulis perangkat lun
 
 ## Sekilas Tentang Bahasa Rust
 
-Rust berada di posisi menarik: performanya mendekati C/C++, tapi dengan jaminan keamanan memori yang jauh lebih kuat. Rust tidak menggunakan garbage collector (GC), sehingga cocok untuk sistem operasi, embedded, game engine, browser engine, database, dan *runtime* yang membutuhkan kontrol sumber daya ketat.
+Rust berada di posisi menarik: performanya mendekati C/C++, tapi dengan jaminan keamanan memori yang jauh lebih kuat. Rust tidak menggunakan mekanisme <span class="tooltip" data-tooltip="Garbage Collection - mekanisme otomatis pembersihan memori yang tidak lagi digunakan">garbage collection (GC)</span>, sehingga cocok untuk sistem operasi, embedded, game engine, browser engine, database, dan *runtime* yang membutuhkan kontrol sumber daya ketat.
 
 Karakteristik utama Rust:
 
-- **Memory safety tanpa GC**: borrow checker mencegah *use-after-free*, *dangling pointer*, dan *data race* saat compile time.
+- **Memory safety tanpa GC**: borrow checker mencegah <span class="tooltip" data-tooltip="Kondisi masih adanya pointer yang mengacu ke memori yang sudah dibebaskan atau dihapus">*dangling pointer*</span>, <span class="tooltip" data-tooltip="Membaca atau menulis ke dangling pointer">*use-after-free*</span>, dan <span class="tooltip" data-tooltip="Mengakses memori secara bersamaan tanpa kontrol">*data race*</span> saat compile time.
 - **Zero-cost abstractions**: fitur tingkat tinggi seperti iterator, pattern matching, dan trait tidak mengorbankan performa.
 - **Ownership system**: setiap nilai punya pemilik tunggal yang jelas; akses bersamaan dikendalikan aturan *borrow*.
-- **Type inference yang kuat**: tipe banyak ditebak compiler, tapi tetap eksplisit saat dibutuhkan.
+- **Type inference yang kuat**: compiler bisa menebak tipe variabel otomatis, tapi tetap bisa ditulis eksplisit saat perlu.
 
 ## Kenapa Rust Dibuat
 
-C dan C++ telah mendominasi pemrograman sistem selama puluhan tahun. Keduanya cepat dan memberi kontrol penuh, tetapi juga rentan terhadap bug memori. Studi menunjukkan bahwa sebagian besar kerentanan keamanan di software sistem berasal dari kesalahan memori: *buffer overflow*, *use-after-free*, *null pointer dereference*, dan sebagainya.
+C dan C++ telah mendominasi pemrograman sistem selama puluhan tahun. Keduanya cepat dan memberi kontrol penuh, tetapi juga rentan terhadap bug memori. Microsoft melaporkan bahwa **sekitar 70% dari CVE (celah keamanan)** yang mereka perbaiki setiap tahun berasal dari kesalahan memori, dan tim keamanan Chromium menemukan angka serupa: **sekitar 70% bug serius** di codebase Chrome juga disebabkan oleh masalah memory safety. Contoh kesalahan memori yang umum: *buffer overflow*, *use-after-free*, *null pointer dereference*, dan sebagainya.
 
-Rust hadir untuk menjawab pertanyaan: **bagaimana caranya memiliki performa C/C++ tanpa rentan bug memori yang sama?** Caranya adalah dengan memindahkan banyak pemeriksaan keamanan dari runtime ke *compile time* melalui sistem ownership dan borrow checker.
+Rust hadir untuk menjawab pertanyaan: **bagaimana caranya memiliki performa C/C++ tanpa rentan bug memori yang sama?** Caranya adalah dengan memindahkan banyak pemeriksaan memory dari runtime ke *compile time* melalui sistem ownership dan borrow checker.
 
 Hasilnya: bug memori yang biasanya baru ketahuan saat runtime atau produksi, jadi terdeteksi lebih awal saat kompilasi.
 
@@ -62,3 +62,13 @@ Linux kernel adalah proyek dengan jutaan baris kode C dan proses review yang san
 - Rust dipakai di tempat kritis: browser engine (Firefox, Servo), game engine, database, dan kini Linux kernel.
 
 Selanjutnya kita akan memasang Rust toolchain dan membuat project pertama.
+
+## Referensi
+- [The Rust Book - Introduction](https://doc.rust-lang.org/book/ch00-00-introduction.html)
+- [Rust Official Website](https://www.rust-lang.org/)
+- [Rust for Linux Project](https://rust-for-linux.com/)
+- [Understanding Ownership](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html)
+- [CWE-416: Use After Free](https://cwe.mitre.org/data/definitions/416.html)
+- [Sejarah Rust (Wikipedia)](https://en.wikipedia.org/wiki/Rust_(programming_language)) — asal-usul Rust, Graydon Hoare, Mozilla Research, dan timeline rilis
+- [Microsoft Security Response Center: A proactive approach to more secure code (2019)](https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/) — data ~70% kerentanan keamanan Microsoft berasal dari memory safety issues
+- [Chromium Project: Memory Safety](https://www.chromium.org/Home/chromium-security/memory-safety/) — studi serupa dari tim keamanan Chrome, ~70% bug serius disebabkan memory safety issues

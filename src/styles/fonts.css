@@ -1,4 +1,34 @@
 :root {
-  --sl-font: "IBM Plex Sans", sans-serif;
-  --sl-font-mono: "IBM Plex Mono", monospace;
+    --sl-font: "IBM Plex Sans", sans-serif;
+    --sl-font-mono: "IBM Plex Mono", monospace;
+}
+
+/* Tooltip styling */
+.tooltip {
+    cursor: help;
+    border-bottom: 1px dotted var(--sl-color-accent);
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--sl-color-gray-6);
+    /*color: white;*/
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.tooltip:hover::before {
+    opacity: 1;
 }
