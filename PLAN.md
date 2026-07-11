@@ -31,7 +31,7 @@
 | `html lang` | ✅ | `<html lang="id" dir="ltr">` di seluruh halaman. |
 | Halaman placeholder | ✅ | 32 halaman di-*noindex* (`noindex: true`) dan dikecualikan dari Pagefind (`pagefind: false`). |
 | Google Search Console support | ✅ | `Head.astro` siap menerima `PUBLIC_GOOGLE_SITE_VERIFICATION`. Panduan ada di `GSC_SETUP.md`. |
-| Verifikasi Google Search Console | ❌ | Belum dilakukan di akun Google kamu. |
+| Verifikasi Google Search Console | 🔄 | File `googlea6f2c1cd357434f1.html` sudah di-upload ke `public/`. Tinggal klik **Verify** di GSC. |
 
 ---
 
