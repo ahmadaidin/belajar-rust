@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://belajarrust.aidin.my.id/sitemap-index.xml
+Sitemap: https://belajar-rust.aidin.my.id/sitemap-index.xml

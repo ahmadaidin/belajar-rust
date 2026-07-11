@@ -8,7 +8,7 @@
 2. Klik **Start now** dan login dengan akun Google kamu.
 3. Pilih **Add property**.
 4. Pilih opsi **Domain**.
-5. Masukkan domain: `belajarrust.aidin.my.id`.
+5. Masukkan domain: `belajar-rust.aidin.my.id`.
 6. Klik **Continue**.
 
 ## 2. Verifikasi Domain
@@ -40,7 +40,7 @@ Google akan meminta verifikasi. Pilih metode yang paling mudah:
 ## 3. Submit Sitemap
 
 1. Di sidebar GSC, pilih **Sitemaps**.
-2. Masukkan URL: `https://belajarrust.aidin.my.id/sitemap-index.xml`
+2. Masukkan URL: `https://belajar-rust.aidin.my.id/sitemap-index.xml`
 3. Klik **Submit**.
 
 ## 4. Pantau Secara Berkala

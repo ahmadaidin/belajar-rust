@@ -6,7 +6,7 @@ import cloudflare from "@astrojs/cloudflare";
 import { sessionDrivers } from "astro/config";
 
 export default defineConfig({
-  site: "https://belajarrust.aidin.my.id",
+  site: "https://belajar-rust.aidin.my.id",
   integrations: [
     svelte(),
     starlight({
