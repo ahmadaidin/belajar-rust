@@ -1,5 +1,6 @@
 ---
 title: Control Flow
+description: "Pelajari control flow di Rust: if expression, loop, while, for, dan pattern matching dasar."
 ---
 
 ## if — expression

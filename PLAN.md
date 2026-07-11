@@ -11,39 +11,38 @@
 | Aspek SEO | Status | Catatan |
 |---|---|---|
 | `site` URL di `astro.config.mjs` | ✅ | `https://belajar-rust.aidin.my.id` |
-| Sitemap (`@astrojs/sitemap`) | ✅ | Otomatis generate saat build. |
-| `robots.txt` | ✅ | Mengarahkan ke `sitemap-index.xml`. |
-| Meta deskripsi per halaman | ✅ | Halaman konten sudah punya `description`. |
-| Open Graph / Twitter Card | ✅ | Dibuat otomatis oleh Starlight + custom Head. |
-| Canonical URL | ✅ | Absolut berdasarkan `site`. |
-| `html lang` | ✅ | Diset ke `id` melalui root locale. |
-| Halaman placeholder | ✅ | 32 halaman di-*noindex* dan `pagefind: false`. |
-| Google Search Console | 🔄 | Siap verifikasi, lihat `GSC_SETUP.md`. |
+| Sitemap (`@astrojs/sitemap`) | ✅ | Generate otomatis saat build (`sitemap-index.xml` + `sitemap-0.xml`). |
+| `robots.txt` | ✅ | `public/robots.txt` mengarahkan ke sitemap. |
+| Meta deskripsi per halaman | ✅ | Semua halaman non-placeholder sekarang punya `description`. |
+| Open Graph / Twitter Card | ✅ | Dibuat otomatis oleh Starlight (`og:title`, `og:url`, `og:description`, `og:locale`, `og:site_name`, `twitter:card`). |
+| Canonical URL | ✅ | `<link rel="canonical">` absolut di setiap halaman. |
+| `html lang` | ✅ | `<html lang="id" dir="ltr">` di seluruh halaman. |
+| Halaman placeholder | ✅ | 32 halaman di-*noindex* (`noindex: true`) dan dikecualikan dari Pagefind (`pagefind: false`). |
+| Google Search Console support | ✅ | `Head.astro` siap menerima `PUBLIC_GOOGLE_SITE_VERIFICATION`. Panduan ada di `GSC_SETUP.md`. |
+| Verifikasi Google Search Console | ❌ | Belum dilakukan di akun Google kamu. |
 
 ---
 
 ## Fase Berikutnya: Konten & Authority
 
-Technical SEO sudah selesai. Sekarang fokus utama adalah **konten berkualitas**, **authority**, dan **promosi**.
-
 ### Fase 1 — Isi Konten Placeholder
 
 Target: 1 topik per minggu, teks saja.
 
-| Minggu | Topik | Tindakan |
+| Minggu | Topik | Status |
 |---|---|---|
-| 1 | Variable & Mutability | Hapus `noindex`, tulis konten lengkap. |
-| 2 | Tipe Data | Hapus `noindex`, tulis konten lengkap. |
-| 3 | Fungsi | Hapus `noindex`, tulis konten lengkap. |
-| 4 | Control Flow | Hapus `noindex`, tulis konten lengkap. |
-| 5 | Pattern Matching | Hapus `noindex`, tulis konten lengkap. |
-| 6 | Option & Result | Hapus `noindex`, tulis konten lengkap. |
-| 7 | Struct | Hapus `noindex`, tulis konten lengkap. |
-| 8 | Enum | Hapus `noindex`, tulis konten lengkap. |
-| 9 | Trait | Hapus `noindex`, tulis konten lengkap. |
-| 10 | Move, Clone, Copy | Hapus `noindex`, tulis konten lengkap. |
-| 11 | References & Borrowing | Hapus `noindex`, tulis konten lengkap. |
-| 12 | Slices / Lifetimes | Hapus `noindex`, tulis konten lengkap. |
+| 1 | Variable & Mutability | ❌ Belum ditulis |
+| 2 | Tipe Data | ❌ Belum ditulis |
+| 3 | Fungsi | ❌ Belum ditulis |
+| 4 | Control Flow | ❌ Belum ditulis |
+| 5 | Pattern Matching | ❌ Belum ditulis |
+| 6 | Option & Result | ❌ Belum ditulis |
+| 7 | Struct | ❌ Belum ditulis |
+| 8 | Enum | ❌ Belum ditulis |
+| 9 | Trait | ❌ Belum ditulis |
+| 10 | Move, Clone, Copy | ❌ Belum ditulis |
+| 11 | References & Borrowing | ❌ Belum ditulis |
+| 12 | Slices / Lifetimes | ❌ Belum ditulis |
 
 Format standar tiap halaman:
 - Intro yang jelas.

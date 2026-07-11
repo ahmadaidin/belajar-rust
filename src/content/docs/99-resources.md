@@ -1,5 +1,6 @@
 ---
 title: Rekomendasi Resource
+description: "Kumpulan resource resmi dan komunitas untuk belajar Rust lebih lanjut, dari Rust Book hingga Rustlings."
 ---
 
 | Resource | Link |
