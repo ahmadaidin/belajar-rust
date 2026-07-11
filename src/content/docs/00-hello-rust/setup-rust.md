@@ -49,7 +49,7 @@ Jika kamu menggunakan **WSL** (Windows Subsystem for Linux), cukup ikuti langkah
 
 ### Windows
 
-Di Windows, unduh installer dari [rust-lang.org/tools/install](https://www.rust-lang.org/tools/install). Saat instalasi, biasanya akan diminta juga memasang Visual Studio untuk menyediakan linker dan library native. Jika mengalami kendala, lihat panduan khusus [Windows MSVC](https://rust-lang.github.io/rustup/installation/windows-msvc.html).
+Di Windows, ikuti metode install berdasarkan [Other Rust Installation Methods](https://forge.rust-lang.org/infra/other-installation-methods.html). 
 
 ### Memastikan Instalasi Berhasil
 
